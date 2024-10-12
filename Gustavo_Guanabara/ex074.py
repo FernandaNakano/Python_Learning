@@ -3,10 +3,12 @@
 
 from random import randint
 
-c = ""
-cont= 0
-while cont < 5:
-    c += randint(0,20)
-    print(c)
-    cont += 1
-
+n = (randint(0,10), randint(0,10), randint(0,10), randint(0,10), randint(0,10))
+print(f'Os números sorteados foram: {n}')
+s = sorted(n)
+menor = s[0]
+print(f'O menor número é: {menor} ')
+print(f'O menor número é: {min(n)} ')
+maior = s[len(s)-1]
+[print(f'O maior número é: {maior}')]
+[print(f'O maior número é: {max(n)}')]
