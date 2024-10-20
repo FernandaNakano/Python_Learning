@@ -45,3 +45,44 @@
 #         print(f'{p[0]} é menor de idade.')
 #         totmen += 1
 # print(f'Temos {totomai} maiores e {totmen} menores de idade.')
+
+# Desafio: Faça um programa que leia nome e peso de várias pessoas, guardando tudo em uma lista. No final, mostre:
+# A) Quantas pessoas foram cadastradas.
+# B) Uma listagem com as pessoas mais pesadas.
+# C) Uma listagem com as pessoas mais leves.
+
+cont = 's'
+maior = menor = 0
+cad = []
+geral = []
+while cont in 'sS':
+    cad = [str(input('Nome: ')), float(input('Idade: '))]
+
+    if len(geral) == 0:
+        maior = menor = cad[1]
+    else:
+        if cad[1] >= maior:
+            maior = cad[1]
+        if cad[1] < menor:
+            menor = cad[1]
+
+    geral.append(cad)
+    print(f'Adicionado {cad} em {geral}')
+
+    cont = input('Deseja continuar [sSnN]? ')
+    # if cont in 'nN':
+    #     break
+
+print(f'Foram cadastradas {len(geral)} pessoas')
+
+print(f'O maior peso foi de {maior}Kg. Pessoas: ', end='')
+for p in geral:
+    if p[1] == maior:
+        print(f'{p[0]} ', end='')
+
+print(f'\nO menor peso foi de {menor}Kg. Pessoas: ', end='')
+for p in geral:
+    if p[1] == menor:
+        print(f'{p[0]} ', end='')
+
+print('Fim')
