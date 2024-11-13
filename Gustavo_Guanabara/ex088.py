@@ -5,7 +5,7 @@
 
 # j = []
 # for c in range(0, nj):
-#     n = sample(range(1, 60), 6)
+#     n = sample(range(1, 60), 7)
 #     n.sort()
 #     j.append(n)
 #     print(f'Jogo {c+1}: {n}')
@@ -29,13 +29,13 @@ while tot <= nj:
         if n not in lista:
             lista.append(n)
             c += 1
-        if c >= 6:
+        if c >= 7:
             break
     lista.sort()
     jogos.append(lista[:])
     lista.clear()
     tot += 1
-print('-=' * 3, f' SORTEANDO {nj} JOGOS ', '-=' * 3)
+print('-=' * 3, f' SORTEANDO {nj} JOGO ', '-=' * 3)
 for i, l in enumerate(jogos):
     print(f'Jogo {i+1}: {l}')
     sleep(1)
